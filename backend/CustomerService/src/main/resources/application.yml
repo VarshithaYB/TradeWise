@@ -1,0 +1,13 @@
+server:
+  port: 8081 # Choose a port for your customer service
+
+spring:
+  application:
+    name: customer-service # Service name that will register to Eureka
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # URL of your Eureka server
+    register-with-eureka: true
+    fetch-registry: true # Enables fetching of other registered services

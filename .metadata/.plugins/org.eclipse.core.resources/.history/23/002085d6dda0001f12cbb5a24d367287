@@ -1,0 +1,57 @@
+package com.tradewise.customerservice.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import com.tradewise.customerservice.model.Customer;
+import com.tradewise.customerservice.service.CustomerService;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/customers")
+public class CustomerController {
+
+    @Autowired
+    private CustomerService customerService;
+
+    // Get all customers
+    @GetMapping
+    public ResponseEntity<List<Customer>> getAllCustomers() {
+        List<Customer> customers = customerService.getAllCustomers();
+        return new ResponseEntity<>(customers, HttpStatus.OK);
+    }
+
+    // Get customer by ID
+    @GetMapping("/{id}")
+    public ResponseEntity<Customer> getCustomerById(@PathVariable String id) {
+        Optional<Customer> customer = customerService.getCustomerById(id);
+        return customer.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    }
+
+    // Get customer by name
+    @GetMapping("/name/{name}")
+    public ResponseEntity<Customer> getCustomerByName(@PathVariable String name) {
+        Optional<Customer> customer = customerService.getCustomerByName(name);
+        return customer.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    }
+
+    // Create or update customer
+    @PostMapping
+    public ResponseEntity<Customer> createOrUpdateCustomer(@RequestBody Customer customer) {
+        Customer savedCustomer = customerService.saveCustomer(customer);
+        return new ResponseEntity<>(savedCustomer, HttpStatus.CREATED);
+    }
+
+    // Delete customer by ID
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable String id) {
+        customerService.deleteCustomer(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+}
+

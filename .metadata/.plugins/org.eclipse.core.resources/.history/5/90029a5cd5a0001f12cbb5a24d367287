@@ -1,0 +1,5 @@
+package com.tradewise.customerservice.controller;
+
+public class CustomerController {
+
+}

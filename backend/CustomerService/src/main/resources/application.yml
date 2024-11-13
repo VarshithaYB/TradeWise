@@ -1,5 +1,5 @@
 server:
-  port: 8081 # Choose a port for your customer service
+  port: 8081 # Port for the customer service
 
 spring:
   application:

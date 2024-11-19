@@ -1,5 +1,6 @@
 package com.ust.auth_service.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginDto {
-    private String email;
-    private String password;
+public class LoginResponseDto {
+    private String token;
+    private String roles;
 }

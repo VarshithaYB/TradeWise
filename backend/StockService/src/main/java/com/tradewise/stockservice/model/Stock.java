@@ -2,6 +2,7 @@ package com.tradewise.stockservice.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +16,11 @@ public class Stock {
 	
 	@Id
     private String stockId;
+	
+	@JsonProperty("companyName")
     private String company;
+	
+	@JsonProperty("stockSymbol")
     private String symbol;
     private double currentPrice;
     private double initialPrice;

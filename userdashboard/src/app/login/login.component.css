@@ -1,0 +1,55 @@
+/* styles.css */
+body {
+    background: linear-gradient(135deg, #1d2b64, #f8cdda); /* Gradient from deep blue to light pink */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
+  
+  .container {
+    max-width: 500px;
+    margin-top: 100px;
+  }
+  
+  .login-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
+    /* text-align: center; */
+  }
+  
+  h2 {
+    font-family: 'Arial', sans-serif;
+    color: #d6dbe0; /* Dark gray */
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .login-btn {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-control {
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      margin-top: 50px;
+    }
+  }
+  

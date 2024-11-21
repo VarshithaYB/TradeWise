@@ -1,0 +1,44 @@
+.navbar {
+  background-color: #2C3E50 !important; /* Deep navy-blue background */
+  padding: 0.05rem 1rem; /* Reduced padding to make the header height smaller */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  color: #ECF0F1 !important; /* Light gray text */
+  text-decoration: none; /* Remove underline from TradeWise */
+  display: flex; /* Use flexbox for better alignment */
+  align-items: center; /* Vertically center the brand name */
+  padding-top: 0; /* Remove any extra padding */
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+/* Flexbox to align navigation links to the right in a single line */
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  flex-grow: 1; /* Ensure it takes up available space */
+  list-style: none; /* Remove bullets */
+  padding-left: 0; /* Remove default padding */
+}
+
+.nav-item {
+  margin-left: 1rem; /* Add space between the nav items */
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  color: #ECF0F1; /* Light text for links */
+  text-decoration: none; /* Remove underline from nav links */
+}
+
+.nav-link:hover {
+  color: #E74C3C !important; /* Red for hover effects */
+}

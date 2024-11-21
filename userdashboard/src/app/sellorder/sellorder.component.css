@@ -1,0 +1,85 @@
+/* Container for the Sell Orders Table */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Heading Style */
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+/* Table header styling */
+.table th {
+  background-color: #2c3e50;
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Table body styling */
+.table td {
+  padding: 12px;
+  text-align: center;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+/* Button Styling for 'Buy Order' */
+.btn-success {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Table Row Hover Effect */
+.table tbody tr:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+/* Styling for Currency (Current and Initial Price) */
+.table td {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive Table Styling */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+  }
+
+  .btn-success {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}

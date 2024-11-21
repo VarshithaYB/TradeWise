@@ -1,0 +1,59 @@
+<div class="container">
+  <h2>Sell Stock</h2>
+  <form (ngSubmit)="onSubmit()" #sellOrderForm="ngForm">
+    <div class="form-group">
+      <label for="companyName">Company Name</label>
+      <input
+        type="text"
+        id="companyName"
+        class="form-control"
+        required
+        [(ngModel)]="sellRequest.companyName"
+        name="companyName"
+        #companyName="ngModel"
+      />
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="companySymbol">Company Symbol</label>
+      <input
+        type="text"
+        id="companySymbol"
+        class="form-control"
+        required
+        [(ngModel)]="sellRequest.companySymbol"
+        name="companySymbol"
+        #companySymbol="ngModel"
+      />
+    </div> -->
+
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input
+        type="number"
+        id="quantity"
+        class="form-control"
+        required
+        [(ngModel)]="sellRequest.quantity"
+        name="quantity"
+        #quantity="ngModel"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="currentPrice">Current Price</label>
+      <input
+        type="number"
+        id="currentPrice"
+        class="form-control"
+        required
+        [(ngModel)]="sellRequest.currentPrice"
+        name="currentPrice"
+        #currentPrice="ngModel"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-danger" [disabled]="!sellOrderForm.valid">Sell Stock</button>
+  </form>
+</div>
+

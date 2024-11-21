@@ -1,0 +1,64 @@
+<!-- <div class="container">
+  <h2>Available Stocks</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Logo</th>
+        <th>Company</th>
+        <th>Symbol</th>
+        <th>Current Price</th>
+        <th>Initial Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stock of stocks">
+        
+        <td>
+          <img *ngIf="stock.logo" [src]="stock.logo" alt="{{stock.company}}" width="50">
+          <span *ngIf="!stock.logo">No Logo</span>
+        </td>
+        <td>{{ stock.company }}</td>
+        <td>{{ stock.symbol }}</td>
+        <td>{{ stock.currentPrice | currency }}</td>
+        <td>{{ stock.initialPrice | currency }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="addStock(stock)">Add to Stocks</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Available Stocks</h2>
+  <div class="row">
+    <!-- Iterate through stocks and display each in a card -->
+    <div class="col-md-4 mb-4" *ngFor="let stock of stocks">
+      <div class="card h-100 shadow-sm">
+        <!-- Display stock logo or placeholder -->
+        <img
+          *ngIf="stock.logo"
+          [src]="stock.logo"
+          alt="{{stock.company}} Logo"
+          class="card-img-top p-3"
+          style="height: 150px; object-fit: contain;"
+        />
+        <div *ngIf="!stock.logo" class="card-img-top d-flex align-items-center justify-content-center bg-light p-3" style="height: 150px;">
+          <span>No Logo</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ stock.company }}</h5>
+          <p class="card-text">
+            <strong>Symbol:</strong> {{ stock.symbol }}<br />
+            <strong>Current Price:</strong> {{ stock.currentPrice | currency }}<br />
+            <strong>Initial Price:</strong> {{ stock.initialPrice | currency }}
+          </p>
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-primary" (click)="addStock(stock)">Add to Stocks</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

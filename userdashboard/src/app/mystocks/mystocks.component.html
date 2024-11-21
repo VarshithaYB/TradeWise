@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Your Stocks</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Stock Name</th>
+        <!-- <th>Symbol</th> -->
+        <th>Current Price</th>
+        <th>Initial Price</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stock of userStocks">
+        <td>{{ stock.companyName }}</td> <!-- Adjust field if necessary -->
+        <!-- <td>{{ stock.stockSymbol }}</td> Adjust field if necessary -->
+        <td [ngClass]="{'text-success': stock.currentPrice > stock.initialPrice, 'text-danger': stock.currentPrice < stock.initialPrice}">
+          {{ stock.currentPrice | currency }}
+        </td>
+        <td>{{ stock.initialPrice | currency }}</td>
+        <td>{{ stock.quantity }}</td>
+        <td>
+          <!-- <button class="btn btn-info">Show Details</button> -->
+          <!-- <button class="btn btn-warning" (click)="navigateToSellOrder(stock.stockSymbol)">Sell Order</button> -->
+          <button class="btn btn-warning" (click)="navigateToSellOrder(stock.companyName)">Sell Order</button>
+
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>
+  <h3>Wallet: {{ wallet }}</h3>
+</div>
+
+<table>
+  <tr *ngFor="let stock of userStocks">
+    <td>{{ stock.companyName }}</td>
+    <td><button (click)="navigateToSellOrder(stock.companyName)">Sell</button></td>
+  </tr>
+</table>
+
+
+

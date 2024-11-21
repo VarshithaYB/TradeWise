@@ -1,0 +1,123 @@
+/* .modal-dialog {
+    margin-top: 100px;
+  }
+  
+  .modal-header {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+   */
+
+   /* Modal Background Styling */
+
+  body {
+    background: linear-gradient(135deg, #1d2b64, #f8cdda);  /* Gradient from deep blue to light pink */
+    color: #c5b3b3;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
+
+.modal {
+  /* background: rgba(0, 0, 0, 0.6); Transparent black background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Dialog Styling */
+.modal-dialog {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 12px;
+  backdrop-filter: blur(10px); /* Glass effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Soft shadow effect */
+  background: rgba(0,0,0,0.6); /* Semi-transparent white background for the modal content */
+}
+
+/* Modal Content Styling */
+.modal-content {
+  border-radius: 10px;
+  padding: 20px;
+  background: transparent;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); 
+}
+
+/* Modal Header */
+.modal-header {
+  background-color:  rgba(0,0,0,0.6);  /* Dark blue background */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  color: white; /* Text color */
+  border-bottom: none;
+  padding: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
+}
+
+/* Modal Body */
+.modal-body {
+  background-color: rgba(0,0,0,0.6); /* Semi-transparent black background */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Input Fields Styling */
+.form-control {
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #eff3f7;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #007bff; /* Primary blue color */
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Optional Styling for Error Message */
+.text-danger {
+  color: red;
+  font-size: 14px;
+}
+
+/* Modal Dialog - Adjust margin */
+.modal-dialog {
+  margin-top: 100px;
+}
+
+/* Adjust button on hover */
+.btn-primary:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,70 @@
+/* Custom background with gradient and overlay */
+body {
+    background: linear-gradient(135deg, #1d2b64, #f8cdda); /* Gradient from deep blue to light pink */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
+
+/* Container styling */
+.container {
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #3e8e41;
+    transform: scale(0.98);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+}

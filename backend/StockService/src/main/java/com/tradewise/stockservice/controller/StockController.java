@@ -1,7 +1,7 @@
 package com.tradewise.stockservice.controller;
 
 import java.util.List;
-
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ import com.tradewise.stockservice.service.StockService;
 
 @RestController
 @CrossOrigin(origins="http://localhost:4202")
-@RequestMapping("/stocks")
+@RequestMapping("/api/stocks")
 public class StockController {
 	
 	@Autowired
@@ -108,13 +108,26 @@ public class StockController {
 //        stockService.sellStock(request.getCompanyName(), request.getQuantity(), request.getPrice());
 //        return ResponseEntity.ok("Stock sold successfully");
 //    }
+//    @PostMapping("/sellStock")
+//    public ResponseEntity<Stock> sellStock(@RequestBody SellStockRequest request) {
+//        if (request.getCompanyName() == null || request.getQuantity() <= 0 || request.getPrice() <= 0) {
+//            return ResponseEntity.badRequest().body(null); // Return null if the input is invalid
+//        }
+//        Stock updatedStock = stockService.sellStock(request.getCompanyName(), request.getQuantity(), request.getPrice());
+//        return ResponseEntity.ok(updatedStock); // Return the updated stock object
+//    }
+    
+    
     @PostMapping("/sellStock")
-    public ResponseEntity<Stock> sellStock(@RequestBody SellStockRequest request) {
-        if (request.getCompanyName() == null || request.getQuantity() <= 0 || request.getPrice() <= 0) {
-            return ResponseEntity.badRequest().body(null); // Return null if the input is invalid
-        }
-        Stock updatedStock = stockService.sellStock(request.getCompanyName(), request.getQuantity(), request.getPrice());
-        return ResponseEntity.ok(updatedStock); // Return the updated stock object
+    public ResponseEntity<Map<String,String>> sellStock(@RequestBody StockRequest request) {
+        stockService.sellStock(request.getCompanyName(), request.getQuantity(), request.getPrice());
+        return ResponseEntity.ok(Map.of("message","Stock sold  successfully"));
+    }
+
+    @DeleteMapping("/deleteStock/{companyName}")
+    public ResponseEntity<Map<String,String>> deleteStock(@PathVariable String companyName) {
+        stockService.deleteStock(companyName);
+        return ResponseEntity.ok(Map.of("message","Stock deleted successfully"));
     }
 
 

@@ -30,19 +30,37 @@ export class SellorderComponent implements OnInit{
     this.companyName = this.route.snapshot.paramMap.get('companyName') || '';
   }
 
+  // onSubmit(): void {
+  //   this.stockService.sellStock(this.companyName, this.quantity, this.price).subscribe(
+  //     (response) => {
+  //       console.log('Stock sold successfully:', response);
+  //       alert('Stock is sold successfully');
+  //       this.router.navigate(['/stocks']); // Redirect to mystocks page
+  //     },
+  //     (error) => {
+  //       console.error('Error selling stock:', error);
+  //       alert('Error selling stock');
+  //     }
+  //   );
+  // }
+
   onSubmit(): void {
-    this.stockService.sellStock(this.companyName, this.quantity, this.price).subscribe(
-      (response) => {
-        console.log('Stock sold successfully:', response);
-        alert('Stock is sold successfully');
-        this.router.navigate(['/stocks']); // Redirect to mystocks page
-      },
-      (error) => {
-        console.error('Error selling stock:', error);
-        alert('Error selling stock');
-      }
-    );
+    console.log('Submitting stock:', this.sellRequest);
+  
+    this.stockService.sellStock(this.sellRequest.companyName, this.sellRequest.quantity, this.sellRequest.currentPrice)
+      .subscribe(
+        (response) => {
+          console.log('Operation successful:', response);
+          alert('Stock operation successful');
+          this.router.navigate(['/stocks']);
+        },
+        (error) => {
+          console.error('Error:', error);
+          alert('Error performing stock operation');
+        }
+      );
   }
+  
 
   
   

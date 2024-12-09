@@ -9,9 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class StockRequest {
 	
+	private String companyName;
 	private String stockId;
     private int quantity;
     private double price;
     private String userId;
-
+	
 }

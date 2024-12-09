@@ -18,7 +18,7 @@ public class Stock {
     private String stockId;
 	
 	@JsonProperty("companyName")
-    private String company;
+    private String companyName;
 	
 	@JsonProperty("stockSymbol")
     private String symbol;

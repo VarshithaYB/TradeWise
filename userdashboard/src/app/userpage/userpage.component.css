@@ -1,0 +1,29 @@
+/* Background image for the body */
+body {
+    background-image: url('/assets/wallpaper.jpg'); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    color: white; /* Ensures text is readable on darker backgrounds */
+  }
+  
+  /* Navbar links style */
+  .nav-link {
+    font-size: 1.1rem;
+  }
+  
+  .navbar-brand img {
+    margin-right: 10px;
+  }
+  
+  /* Center content styling */
+  .container.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 56px); /* Adjust for navbar height */
+  }
+  

@@ -1,5 +1,0 @@
-package com.tradewise.customerservice.exceptionhandler;
-
-public class BadRequestException {
-
-}

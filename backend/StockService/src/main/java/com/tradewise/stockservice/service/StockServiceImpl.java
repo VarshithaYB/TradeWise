@@ -75,7 +75,7 @@ public class StockServiceImpl implements StockService{
 	public Stock updateStock(String stockId, Stock updatedStock) throws StockNotFoundException {
         Stock stock = stockRepository.findById(stockId)
                 .orElseThrow(() -> new StockNotFoundException("Stock not found with id " + stockId));
-        stock.setCompany(updatedStock.getCompany());
+        stock.setCompanyName(updatedStock.getCompanyName());
         stock.setSymbol(updatedStock.getSymbol());
         stock.setCurrentPrice(updatedStock.getCurrentPrice());
         stock.setInitialPrice(updatedStock.getInitialPrice());
@@ -83,22 +83,52 @@ public class StockServiceImpl implements StockService{
         return stockRepository.save(stock);
     }
 	
-	@Override
-	public Stock sellStock(String stockId, int quantity,double price) throws StockNotFoundException {
-	    Stock stock = stockRepository.findById(stockId)
-	            .orElseThrow(() -> new StockNotFoundException("Stock not found with id: " + stockId));
+//	@Override
+//	public Stock sellStock(String stockId, int quantity,double price) throws StockNotFoundException {
+//	    Stock stock = stockRepository.findById(stockId)
+//	            .orElseThrow(() -> new StockNotFoundException("Stock not found with id: " + stockId));
+//
+//	    // Ensure there is enough stock to sell
+//	    if (stock.getQuantity() < quantity) {
+//	        throw new IllegalArgumentException("Not enough stock to sell");
+//	    }
+//
+//	    // Reduce the stock quantity
+//	    stock.setQuantity(stock.getQuantity() - quantity);
+//
+//	    // Save the updated stock and return it
+//	    return stockRepository.save(stock);
+//	}
+	
+	public void sellStock(String companyName, int quantity, double price) {
+        Optional<Stock> optionalStock = stockRepository.findByCompanyName(companyName);
 
-	    // Ensure there is enough stock to sell
-	    if (stock.getQuantity() < quantity) {
-	        throw new IllegalArgumentException("Not enough stock to sell");
-	    }
+        if (optionalStock.isEmpty()) {
+            throw new RuntimeException("Stock not found");
+        }
 
-	    // Reduce the stock quantity
-	    stock.setQuantity(stock.getQuantity() - quantity);
+        Stock stock = optionalStock.get();
 
-	    // Save the updated stock and return it
-	    return stockRepository.save(stock);
-	}
+        if (quantity <= 0) {
+            stockRepository.delete(stock); // Delete stock if quantity is 0 or less
+        } else {
+            stock.setQuantity(quantity);
+            stock.setCurrentPrice(price);
+            stockRepository.save(stock); // Update the stock
+        }
+    }
+
+    public void deleteStock(String companyName) {
+        Optional<Stock> optionalStock = stockRepository.findByCompanyName(companyName);
+
+        if (optionalStock.isEmpty()) {
+            throw new RuntimeException("Stock not found");
+        }
+
+        stockRepository.delete(optionalStock.get()); // Explicitly delete the stock
+    }
+
+	
 	
 	
 	

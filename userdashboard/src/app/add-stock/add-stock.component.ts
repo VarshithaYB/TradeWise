@@ -40,7 +40,7 @@ export class AddStockComponent  implements OnInit {
       (response) => {
         console.log('Stock added successfully', response);
         window.alert('Stock added successfully!');
-        this.router.navigate(['/stocks']);
+        this.router.navigate(['/mystocks']);
       },
       (error) => {
         console.error('Error adding stock', error);

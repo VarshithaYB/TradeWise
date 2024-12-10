@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StockService {
-  private baseUrl = 'http://localhost:5050/stocks';  // Base API URL
+  private baseUrl = 'http://localhost:5050/api/stocks';  // Base API URL
 
   constructor(private http: HttpClient) {}
 
@@ -40,10 +40,27 @@ export class StockService {
     //   return this.http.put(`${this.baseUrl}/sell`, body); // Adjust endpoint as necessary
     // }
 
+    // sellStock(companyName: string, quantity: number, price: number): Observable<any> {
+    //   const sellStockPayload = { companyName, quantity, price };
+    //   return this.http.post<any>(`${this.baseUrl}/sellStock`, sellStockPayload);
+    // }
+
     sellStock(companyName: string, quantity: number, price: number): Observable<any> {
       const sellStockPayload = { companyName, quantity, price };
+      
+      if (quantity === 0) {
+        // Call the delete API when the quantity is 0
+        return this.deleteStock(companyName);
+      }
+    
       return this.http.post<any>(`${this.baseUrl}/sellStock`, sellStockPayload);
     }
+    
+    // Method to delete the stock
+    deleteStock(companyName: string): Observable<any> {
+      return this.http.delete<any>(`${this.baseUrl}/deleteStock/${companyName}`);
+    }
+    
     
 }
 

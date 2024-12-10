@@ -1,118 +1,69 @@
-/* .container {
+/* General page styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1d2b64, #e7e2e4);
+  padding-top: 20px;
+}
+
+.container {
   margin-top: 20px;
 }
 
-table {
-  width: 100%;
-}
-
-img {
-  border-radius: 50%;
-} */
-
-/* General styles for the container */
-
-
-/* General styles for the body */
-/* body {
-  background: linear-gradient(135deg, #cc863f, #e4d9c6);
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #e6742d;
-} */
-
-body {
-  background: linear-gradient(135deg, #282928, #181717); /* Soft green-teal blending into pastel beige */
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #3a3a3a; /* Neutral dark gray for text */
-}
-
-
-/* General styles for the container */
-.container {
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 1200px;
-  border-radius: 10px;
-}
-
-/* Header styling */
 h2 {
-  font-family: 'Poppins', sans-serif;
-  color: #6c5434; /* Warm terracotta brown */
-  font-weight: 600;
-  margin-bottom: 20px;
-  text-align: center;
+  color: #007bff;
+  font-weight: bold;
 }
 
-/* Card styles */
+/* Card styling */
 .card {
-  background: linear-gradient(145deg, #f9f4ef, #eae2db); /* Warm light gradient */
-  border: 1px solid #d3c4b1; /* Subtle warm beige border */
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Card shadow */
-  overflow: hidden;
+  border: none;
+  border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Hover effect for cards */
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Card image */
 .card-img-top {
-  background-color: #ede6df; /* Subtle warm tone for no image placeholder */
-  border-bottom: 1px solid #d3c4b1; /* Divider line */
+  border-radius: 10px 10px 0 0;
 }
 
-/* Card body */
 .card-body {
-  padding: 15px;
+  padding: 20px;
 }
 
 .card-title {
-  font-size: 1.2rem;
-  color: #4a403a; /* Earthy brown for text */
-  margin-bottom: 10px;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .card-text {
-  font-size: 0.9rem;
-  color: #7d7061; /* Neutral taupe text */
+  color: #555;
 }
 
-/* Card footer */
 .card-footer {
-  background-color: #efe7e2; /* Soft beige footer */
-  border-top: 1px solid #d3c4b1;
-  text-align: center;
-  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 0 0 10px 10px;
 }
 
 .card-footer .btn {
-  background-color: #8f5e3c; /* Warm terracotta button */
+  width: 100%;
+  background-color: #007bff;
+  color: white;
   border: none;
-  color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 20px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .card-footer .btn:hover {
-  background-color: #74472d; /* Darker terracotta on hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #0056b3;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .card {
-    margin-bottom: 20px; /* Add spacing on smaller screens */
-  }
+/* Placeholder for stock logo */
+.card-img-top.d-flex.align-items-center.justify-content-center.bg-light {
+  font-size: 1.25rem;
+  color: #999;
 }

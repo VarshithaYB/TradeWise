@@ -2,6 +2,7 @@ package com.tradewise.stockservice.service;
 
 import java.util.List;
 //import java.util.Optional;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -85,22 +86,52 @@ public class StockServiceImpl implements StockService{
         return stockRepository.save(stock);
     }
 	
-	@Override
-	public Stock sellStock(String stockId, int quantity,double price) throws StockNotFoundException {
-	    Stock stock = stockRepository.findById(stockId)
-	            .orElseThrow(() -> new StockNotFoundException("Stock not found with id: " + stockId));
+//	@Override
+//	public Stock sellStock(String stockId, int quantity,double price) throws StockNotFoundException {
+//	    Stock stock = stockRepository.findById(stockId)
+//	            .orElseThrow(() -> new StockNotFoundException("Stock not found with id: " + stockId));
+//
+//	    // Ensure there is enough stock to sell
+//	    if (stock.getQuantity() < quantity) {
+//	        throw new IllegalArgumentException("Not enough stock to sell");
+//	    }
+//
+//	    // Reduce the stock quantity
+//	    stock.setQuantity(stock.getQuantity() - quantity);
+//
+//	    // Save the updated stock and return it
+//	    return stockRepository.save(stock);
+//	}
+	
+	public void sellStock(String company, int quantity, double price) {
+        Optional<Stock> optionalStock = stockRepository.findByCompany(company);
 
-	    // Ensure there is enough stock to sell
-	    if (stock.getQuantity() < quantity) {
-	        throw new IllegalArgumentException("Not enough stock to sell");
-	    }
+        if (optionalStock.isEmpty()) {
+            throw new RuntimeException("Stock not found");
+        }
 
-	    // Reduce the stock quantity
-	    stock.setQuantity(stock.getQuantity() - quantity);
+        Stock stock = optionalStock.get();
 
-	    // Save the updated stock and return it
-	    return stockRepository.save(stock);
-	}
+        if (quantity <= 0) {
+            stockRepository.delete(stock); // Delete stock if quantity is 0 or less
+        } else {
+            stock.setQuantity(quantity);
+            stock.setCurrentPrice(price);
+            stockRepository.save(stock); // Update the stock
+        }
+    }
+
+    public void deleteStock(String company) {
+        Optional<Stock> optionalStock = stockRepository.findByCompany(company);
+
+        if (optionalStock.isEmpty()) {
+            throw new RuntimeException("Stock not found");
+        }
+
+        stockRepository.delete(optionalStock.get()); // Explicitly delete the stock
+    }
+
+	
 	
 //	 @Override
 //	    public List<Stock> getStocksByUserId(String userId) {

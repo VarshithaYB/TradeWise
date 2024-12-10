@@ -1,0 +1,10 @@
+server:
+  port: 8083  # Port for the Admin service
+spring:
+  application:
+    name: admin-service  # Service name registered with Eureka
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka  # URL of the Eureka Server

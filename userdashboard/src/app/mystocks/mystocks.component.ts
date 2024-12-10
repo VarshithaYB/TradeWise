@@ -34,8 +34,8 @@ export class MystocksComponent implements OnInit {
 
 
    // Navigate to the Sell Order form
-   navigateToSellOrder(companyName: string): void {
-    this.router.navigate(['/sell-order', companyName]);  // Navigates to sell order route
+   navigateToSellOrder(company: string): void {
+    this.router.navigate(['/sell-order', company]);  // Navigates to sell order route
   }
   
   }

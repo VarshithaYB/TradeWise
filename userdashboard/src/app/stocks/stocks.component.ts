@@ -13,12 +13,12 @@ import { Router } from '@angular/router';
 export class StocksComponent {
 
   stocks = [
-    { company: 'Apple', symbol: 'AAPL', currentPrice: 150, initialPrice: 120, logo: 'path-to-logo-apple.png' },
-    { company: 'Tesla', symbol: 'TSLA', currentPrice: 800, initialPrice: 700, logo: 'path-to-logo-tesla.png' },
-    { company: 'Amazon', symbol: 'AMZN', currentPrice: 3400, initialPrice: 3000, logo: 'path-to-logo-amazon.png' },
-    { company: 'Google', symbol: 'GOOGL', currentPrice: 2800, initialPrice: 2500, logo: 'path-to-logo-google.png' },
-    { company: 'Microsoft', symbol: 'MSFT', currentPrice: 290, initialPrice: 250, logo: 'path-to-logo-microsoft.png' },
-    { company: 'Facebook', symbol: 'FB', currentPrice: 360, initialPrice: 320, logo: 'path-to-logo-facebook.png' }
+    { company: 'Apple', symbol: 'AAPL', currentPrice: 150, initialPrice: 120, logo: '/assets/apple.jpg'},
+    { company: 'Tesla', symbol: 'TSLA', currentPrice: 800, initialPrice: 700, logo: '/assets/tesla.jpg' },
+    { company: 'Amazon', symbol: 'AMZN', currentPrice: 3400, initialPrice: 3000, logo: '/assets/amazon.jpg' },
+    { company: 'Google', symbol: 'GOOGL', currentPrice: 2800, initialPrice: 2500, logo: '/assets/google.jpg' },
+    { company: 'Microsoft', symbol: 'MSFT', currentPrice: 290, initialPrice: 250, logo: '/assets/microsoft.jpg' },
+    { company: 'Facebook', symbol: 'FB', currentPrice: 360, initialPrice: 320, logo: '/assets/facebook.jpg' }
   ];
   
   constructor(private router: Router, private stockService: StockService) {}
@@ -27,6 +27,13 @@ export class StocksComponent {
 
   addStock(stock: any): void {
     this.router.navigate(['/add-stock'], { state: { stock } });
+  }
+
+  
+
+  // Method to navigate to the 'userpage' component
+  goToUserPage() {
+    this.router.navigate(['/user']);
   }
 
 }

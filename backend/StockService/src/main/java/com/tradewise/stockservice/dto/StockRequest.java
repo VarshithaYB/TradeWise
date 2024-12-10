@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class StockRequest {
 	
-	private String companyName;
+	private String company;
 	private String stockId;
     private int quantity;
     private double price;

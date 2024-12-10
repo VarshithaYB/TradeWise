@@ -7,11 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./userpage.component.css']
 })
 export class UserpageComponent {
-  constructor(private router: Router) { }
-
-  // Method to navigate to the 'userpage' component
-  goToUserPage() {
-    this.router.navigate(['/userpage']);
-  }
+  
 
 }

@@ -7,14 +7,13 @@ import { StockService,StockRequest } from '../stock.service';
   styleUrls: ['./sellorder.component.css']
 })
 export class SellorderComponent implements OnInit{
-  companyName: string = '';
+  company: string = '';
   quantity: number = 0;
   price: number = 0;
 
   
   sellRequest = {
-    companyName: '',
-    companySymbol: '',
+    company: '',
     quantity: 0,
     currentPrice: 0
   };
@@ -27,7 +26,7 @@ export class SellorderComponent implements OnInit{
 
   ngOnInit(): void {
     // Get the companyName from route parameters
-    this.companyName = this.route.snapshot.paramMap.get('companyName') || '';
+    this.company = this.route.snapshot.paramMap.get('company') || '';
   }
 
   // onSubmit(): void {
@@ -47,12 +46,12 @@ export class SellorderComponent implements OnInit{
   onSubmit(): void {
     console.log('Submitting stock:', this.sellRequest);
   
-    this.stockService.sellStock(this.sellRequest.companyName, this.sellRequest.quantity, this.sellRequest.currentPrice)
+    this.stockService.sellStock(this.sellRequest.company, this.sellRequest.quantity, this.sellRequest.currentPrice)
       .subscribe(
         (response) => {
           console.log('Operation successful:', response);
           alert('Stock operation successful');
-          this.router.navigate(['/stocks']);
+          this.router.navigate(['/mystocks']);
         },
         (error) => {
           console.error('Error:', error);

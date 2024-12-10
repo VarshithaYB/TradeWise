@@ -17,10 +17,10 @@ public class Stock {
 	@Id
     private String stockId;
 	
-	@JsonProperty("companyName")
-    private String companyName;
+	@JsonProperty("company")
+    private String company;
 	
-	@JsonProperty("stockSymbol")
+	@JsonProperty("symbol")
     private String symbol;
     private double currentPrice;
     private double initialPrice;

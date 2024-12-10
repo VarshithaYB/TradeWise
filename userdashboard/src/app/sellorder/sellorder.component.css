@@ -1,85 +1,82 @@
-/* Container for the Sell Orders Table */
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1d2b64, #f8cdda); /* Light grey background */
+  padding: 20px;
+  height: 100vh; /* Ensures the background covers the full height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container Style */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 600px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
 }
 
 /* Heading Style */
 h2 {
-  font-size: 2rem;
+  color: #343a40; /* Dark color for heading */
   font-weight: bold;
-  color: #333;
-  text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
 }
 
-/* Table Styling */
-.table {
+/* Form Group Label Style */
+.form-group label {
+  font-weight: bold;
+  color: #495057; /* Darker text for labels */
+}
+
+/* Form Input Style */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Form Input Focus Style */
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+/* Submit Button Style */
+.btn-danger {
+  background-color: #0e55b3;
+  border-color: #0e55b3;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-/* Table header styling */
-.table th {
-  background-color: #2c3e50;
-  color: white;
-  font-size: 1.1rem;
-  padding: 12px;
-  text-align: center;
-}
-
-/* Table body styling */
-.table td {
-  padding: 12px;
-  text-align: center;
-  font-size: 1rem;
-  border-bottom: 1px solid #ddd;
-  color: #333;
-}
-
-/* Button Styling for 'Buy Order' */
-.btn-success {
-  background-color: #28a745;
-  border: none;
-  color: white;
-  padding: 8px 15px;
-  font-size: 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-success:hover {
-  background-color: #218838;
-}
-
-/* Table Row Hover Effect */
-.table tbody tr:hover {
-  background-color: #f4f4f4;
   cursor: pointer;
 }
 
-/* Styling for Currency (Current and Initial Price) */
-.table td {
-  font-size: 1rem;
-  color: #333;
+/* Button Hover Style */
+.btn-danger:hover {
+  background-color: #0e55b3;
+  border-color: #0e55b3;
 }
 
-/* Responsive Table Styling */
-@media (max-width: 768px) {
-  .table {
-    font-size: 0.9rem;
+/* Disable Submit Button */
+button[disabled] {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .container {
+    padding: 20px;
   }
 
-  .table th,
-  .table td {
-    padding: 10px;
-  }
-
-  .btn-success {
-    padding: 6px 12px;
-    font-size: 0.9rem;
+  h2 {
+    font-size: 24px;
   }
 }

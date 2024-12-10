@@ -25,7 +25,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let stock of userStocks">
-          <td>{{ stock.companyName }}</td> <!-- Adjust field if necessary -->
+          <td>{{ stock.company }}</td> <!-- Adjust field if necessary -->
           <!-- <td>{{ stock.stockSymbol }}</td> Adjust field if necessary -->
           <td [ngClass]="{'text-success': stock.currentPrice > stock.initialPrice, 'text-danger': stock.currentPrice < stock.initialPrice}">
             {{ stock.currentPrice | currency }}
@@ -35,7 +35,7 @@
           <td>
             <!-- <button class="btn btn-info">Show Details</button> -->
             <!-- <button class="btn btn-warning" (click)="navigateToSellOrder(stock.stockSymbol)">Sell Order</button> -->
-            <button class="btn btn-warning" (click)="navigateToSellOrder(stock.companyName)">Sell Order</button>
+            <button class="btn btn-warning" (click)="navigateToSellOrder(stock.company)">Sell Order</button>
           </td>
         </tr>
       </tbody>

@@ -12,6 +12,6 @@ import com.tradewise.stockservice.model.Stock;
 @Repository
 public interface StockRepository extends MongoRepository<Stock, String>{
 
-Optional<Stock> findByCompanyName(String companyName);
+Optional<Stock> findByCompany(String company);
 
 }

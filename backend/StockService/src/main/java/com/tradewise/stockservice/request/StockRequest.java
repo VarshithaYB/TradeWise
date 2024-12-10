@@ -10,7 +10,7 @@ import lombok.Data;
 public class StockRequest {
 
 	
-	private String companyName;
+	private String company;
 	private int quantity;
 	private double price;
 	

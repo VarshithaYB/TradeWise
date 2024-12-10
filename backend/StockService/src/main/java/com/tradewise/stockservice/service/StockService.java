@@ -12,8 +12,8 @@ public interface StockService {
     List<Stock> getAllStocks();
     //Stock sellStock(String stockId, int quantity, double price) throws StockNotFoundException;
     Stock updateStock(String stockId, Stock updatedStock);
-    void sellStock(String companyName, int quantity, double price);
-	void deleteStock(String companyName);
+    void sellStock(String company, int quantity, double price);
+	void deleteStock(String company);
     
 }
 

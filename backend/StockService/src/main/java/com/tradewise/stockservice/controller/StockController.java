@@ -120,13 +120,13 @@ public class StockController {
     
     @PostMapping("/sellStock")
     public ResponseEntity<Map<String,String>> sellStock(@RequestBody StockRequest request) {
-        stockService.sellStock(request.getCompanyName(), request.getQuantity(), request.getPrice());
+        stockService.sellStock(request.getCompany(), request.getQuantity(), request.getPrice());
         return ResponseEntity.ok(Map.of("message","Stock sold  successfully"));
     }
 
-    @DeleteMapping("/deleteStock/{companyName}")
-    public ResponseEntity<Map<String,String>> deleteStock(@PathVariable String companyName) {
-        stockService.deleteStock(companyName);
+    @DeleteMapping("/deleteStock/{company}")
+    public ResponseEntity<Map<String,String>> deleteStock(@PathVariable String company) {
+        stockService.deleteStock(company);
         return ResponseEntity.ok(Map.of("message","Stock deleted successfully"));
     }
 

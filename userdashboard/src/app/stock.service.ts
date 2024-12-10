@@ -45,20 +45,20 @@ export class StockService {
     //   return this.http.post<any>(`${this.baseUrl}/sellStock`, sellStockPayload);
     // }
 
-    sellStock(companyName: string, quantity: number, price: number): Observable<any> {
-      const sellStockPayload = { companyName, quantity, price };
+    sellStock(company: string, quantity: number, price: number): Observable<any> {
+      const sellStockPayload = { company, quantity, price };
       
       if (quantity === 0) {
         // Call the delete API when the quantity is 0
-        return this.deleteStock(companyName);
+        return this.deleteStock(company);
       }
     
       return this.http.post<any>(`${this.baseUrl}/sellStock`, sellStockPayload);
     }
     
     // Method to delete the stock
-    deleteStock(companyName: string): Observable<any> {
-      return this.http.delete<any>(`${this.baseUrl}/deleteStock/${companyName}`);
+    deleteStock(company: string): Observable<any> {
+      return this.http.delete<any>(`${this.baseUrl}/deleteStock/${company}`);
     }
     
     

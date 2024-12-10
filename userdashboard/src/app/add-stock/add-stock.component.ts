@@ -15,8 +15,8 @@ export class AddStockComponent  implements OnInit {
   // price!: number;
   // userId = 1; // Assume a hardcoded userId for now
 
-  companyName: string='';
-  stocksymbol: string = '';  // Make sure it's a string
+  company: string='';
+  symbol: string = '';  // Make sure it's a string
   quantity: number = 0;  // Make sure it's a number
   price: number = 0; 
   currentPrice: number=0;
@@ -28,8 +28,8 @@ export class AddStockComponent  implements OnInit {
 
   submitStock() {
     const stockData = {
-      companyName: this.companyName,
-      stocksymbol: this.stocksymbol,
+      company: this.company,
+      symbol: this.symbol,
       quantity: this.quantity,
       currentPrice: this.currentPrice,
       initialPrice: this.initialPrice

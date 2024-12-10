@@ -52,7 +52,7 @@ export class SellorderComponent implements OnInit{
         (response) => {
           console.log('Operation successful:', response);
           alert('Stock operation successful');
-          this.router.navigate(['/stocks']);
+          this.router.navigate(['/mystocks']);
         },
         (error) => {
           console.error('Error:', error);

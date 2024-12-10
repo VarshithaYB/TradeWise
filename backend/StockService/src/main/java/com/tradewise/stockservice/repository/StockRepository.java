@@ -18,6 +18,8 @@ public interface StockRepository extends MongoRepository<Stock, String>{
 	
 	List<Stock> findByEmail(String email);
 
+
 	Optional<Stock> findByCompany(String company);
+
 
 }

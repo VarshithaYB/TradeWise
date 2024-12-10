@@ -103,6 +103,7 @@ public class StockServiceImpl implements StockService{
 //	    return stockRepository.save(stock);
 //	}
 	
+
 //	public void sellStock(String company, int quantity, double price) {
 //        Optional<Stock> optionalStock = stockRepository.findByCompany(company);
 //
@@ -121,33 +122,39 @@ public class StockServiceImpl implements StockService{
 //        }
 //    }
 
+	
+	
 	public void sellStock(String company, int quantity, double price) {
 	    Optional<Stock> optionalStock = stockRepository.findByCompany(company);
+	    System.out.println("Stock retrieved: {}"+optionalStock);
+
 
 	    if (optionalStock.isEmpty()) {
-	        throw new RuntimeException("Stock not found");
+	        throw new StockNotFoundException("Stock not found for company: " + company);
 	    }
 
 	    Stock stock = optionalStock.get();
 
-	    // Ensure the stock has sufficient quantity to sell
-	    if (stock.getQuantity() < quantity) {
-	        throw new RuntimeException("Insufficient stock quantity available to sell");
+	    if (quantity <= 0) {
+	        throw new StockNotFoundException("Quantity must be greater than 0");
 	    }
 
-	    // Reduce the stock quantity
-	    int updatedQuantity = stock.getQuantity() - quantity;
 
-	    if (updatedQuantity == 0) {
-	        stockRepository.delete(stock); // Delete stock if all units are sold
+	    int newQuantity = stock.getQuantity() - quantity; // Subtract the sold quantity from the existing quantity
+
+	    if (newQuantity < 0) {
+	        throw new RuntimeException("Insufficient stock to sell");
+	    } else if (newQuantity == 0) {
+	        stockRepository.delete(stock); // Delete stock if the resultant quantity is 0
 	    } else {
-	        stock.setQuantity(updatedQuantity);
-	        stock.setCurrentPrice(price); // Optionally update the price
-	        stockRepository.save(stock); // Update the stock
+	        stock.setQuantity(newQuantity);
+	        stock.setCurrentPrice(price);
+	        stockRepository.save(stock); // Update the stock with new quantity and price
 	    }
 	}
 
-	
+
+
     public void deleteStock(String company) {
         Optional<Stock> optionalStock = stockRepository.findByCompany(company);
 

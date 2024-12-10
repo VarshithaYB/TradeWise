@@ -1,9 +1,16 @@
 <!-- <app-header></app-header> -->
 
 <!-- Router Outlet: Dynamic Content will be rendered here -->
-<div class="content">
+<!-- <app-header></app-header>  -->
+<!-- <div class="content">
   <router-outlet></router-outlet>
+</div> -->
+
+<div *ngIf="showHeader">
+  <app-header></app-header>
 </div>
+<router-outlet></router-outlet>
+
 
 <!-- Include Footer -->
 <!-- <app-footer></app-footer> -->

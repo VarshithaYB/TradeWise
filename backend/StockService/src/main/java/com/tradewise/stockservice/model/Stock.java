@@ -20,6 +20,7 @@ public class Stock {
 
 	@JsonProperty("company")
     private String company;
+	
 
 	@JsonProperty("symbol")
     private String symbol;

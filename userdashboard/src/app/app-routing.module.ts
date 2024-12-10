@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { ResultComponent } from './result/result.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'quiz', component: QuizComponent },
   { path: 'result', component: ResultComponent },
   { path: '', redirectTo: '/quiz', pathMatch: 'full' },
-  { path: '', redirectTo: '/stocks', pathMatch: 'full' }
+  { path: '', redirectTo: '/stocks', pathMatch: 'full' },
+  { path: 'admin', component: AdmindashboardComponent}
 ];
 
 @NgModule({

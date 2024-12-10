@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { StockService } from '../stock.service'; 
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -21,13 +22,23 @@ export class StocksComponent {
     { company: 'Facebook', symbol: 'FB', currentPrice: 360, initialPrice: 320, logo: '/assets/facebook.jpg' }
   ];
   
-  constructor(private router: Router, private stockService: StockService) {}
+  constructor(private router: Router, private stockService: StockService, private authService: AuthService) {}
 
   ngOnInit(): void {}
 
+  // addStock(stock: any): void {
+  //   this.router.navigate(['/add-stock'], { state: { stock } });
+  // }
+
   addStock(stock: any): void {
-    this.router.navigate(['/add-stock'], { state: { stock } });
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/add-stock'], { state: { stock } });
+    } else {
+      window.alert('Please sign up or log in to add stocks.');
+      this.router.navigate(['/register']);
+    }
   }
+  
 
   
 

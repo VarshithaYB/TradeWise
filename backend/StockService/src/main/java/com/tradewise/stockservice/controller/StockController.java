@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+//import com.tradewise.stockservice.request.StockRequest;
 
 import com.tradewise.stockservice.dto.StockRequest;
 import com.tradewise.stockservice.exception.StockNotFoundException;
@@ -135,7 +136,7 @@ public class StockController {
 //import org.springframework.web.bind.annotation.CrossOrigin;
 //import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.PathVariable;
-////import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.RequestMapping;
@@ -203,13 +204,13 @@ public class StockController {
 //    
     @PostMapping("/sellStock")
     public ResponseEntity<Map<String,String>> sellStock(@RequestBody StockRequest request) {
-        stockService.sellStock(request.getCompanyName(), request.getQuantity(), request.getPrice());
+        stockService.sellStock(request.getCompany(), request.getQuantity(), request.getPrice());
         return ResponseEntity.ok(Map.of("message","Stock sold  successfully"));
     }
 
-    @DeleteMapping("/deleteStock/{companyName}")
-    public ResponseEntity<Map<String,String>> deleteStock(@PathVariable String companyName) {
-        stockService.deleteStock(companyName);
+    @DeleteMapping("/deleteStock/{company}")
+    public ResponseEntity<Map<String,String>> deleteStock(@PathVariable String company) {
+        stockService.deleteStock(company);
         return ResponseEntity.ok(Map.of("message","Stock deleted successfully"));
 
     }

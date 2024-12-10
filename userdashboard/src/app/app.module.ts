@@ -16,6 +16,8 @@ import { RegisterComponent } from './register/register.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { ResultComponent } from './result/result.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { UsersComponent } from './users/users.component';
 //import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -34,6 +36,8 @@ import { ResultComponent } from './result/result.component';
     UserpageComponent,
     QuizComponent,
     ResultComponent,
+    AdmindashboardComponent,
+    UsersComponent,
     //ReactiveFormsModule
 
   ],

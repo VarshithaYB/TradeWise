@@ -28,16 +28,32 @@ export class AuthService {
         // Store token and role in session storage
         sessionStorage.setItem('token', response.token);
         sessionStorage.setItem('role', response.roles); 
-        if(response.roles === 'USER'){
+        // if(response.roles === 'USER'){
           
-        }
+        // }
          // assuming response includes a single role
+
+         sessionStorage.setItem('isLoggedIn', 'true');
         return response;
       }),
       catchError(error => {
         throw new Error('Login failed');
       })
     );
+  }
+
+  logout(): void{
+    sessionStorage.clear();
+  }
+
+  // Check if user is logged in
+  isLoggedIn(): boolean {
+    return sessionStorage.getItem('isLoggedIn') === 'true';
+  }
+
+  // Check user role
+  getUserRole(): string | null {
+    return sessionStorage.getItem('role');
   }
 
 

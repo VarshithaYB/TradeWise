@@ -40,7 +40,7 @@ export class LoginComponent  {
           console.log('Login successful:', response);
           const role = sessionStorage.getItem('role');
           if (role === 'ADMIN') {
-            this.router.navigate(['/admindashboard']);
+            this.router.navigate(['/admin']);
           } else if (role === 'USER') {
             this.router.navigate(['/user']);
             

@@ -10,6 +10,6 @@ import com.tradewise.admin.dto.CustomerDTO;
 @FeignClient(name = "customer-service", url = "http://localhost:8081") // URL for CustomerService
 public interface CustomerServiceClient {
 
-    @GetMapping("/customers/all")
+    @GetMapping("/api/customers")
     List<CustomerDTO> getAllCustomers();
 }

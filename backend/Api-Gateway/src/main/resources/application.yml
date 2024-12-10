@@ -57,7 +57,7 @@ spring:
             - Path=/api/stocks/**  # Route requests starting with /api/stocks/ to stock-service
             
         - id: admin-service
-          uri: lb://ADMINSERVICE # Load balanced routing to stock service
+          uri: lb://ADMIN-SERVICE # Load balanced routing to stock service
           predicates:
             - Path=/api/admin/**  # Route requests starting with /api/stocks/ to stock-service
             

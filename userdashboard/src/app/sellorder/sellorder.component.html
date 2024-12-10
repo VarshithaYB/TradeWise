@@ -2,14 +2,14 @@
   <h2>Sell Stock</h2>
   <form (ngSubmit)="onSubmit()" #sellOrderForm="ngForm">
     <div class="form-group">
-      <label for="companyName">Company Name</label>
+      <label for="company">Company Name</label>
       <input
         type="text"
         id="companyName"
         class="form-control"
         required
-        [(ngModel)]="sellRequest.companyName"
-        name="companyName"
+        [(ngModel)]="sellRequest.company"
+        name="company"
         #companyName="ngModel"
       />
     </div>

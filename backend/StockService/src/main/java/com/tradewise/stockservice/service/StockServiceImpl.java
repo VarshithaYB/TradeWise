@@ -1,6 +1,7 @@
 package com.tradewise.stockservice.service;
 
 import java.util.List;
+//import java.util.Optional;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.tradewise.stockservice.exception.StockNotFoundException;
 import com.tradewise.stockservice.model.Stock;
-import com.tradewise.stockservice.model.Wallet;
+//import com.tradewise.stockservice.model.Wallet;
 import com.tradewise.stockservice.repository.StockRepository;
-import com.tradewise.stockservice.repository.WalletRepository;
+//import com.tradewise.stockservice.repository.WalletRepository;
 
 @Service
 public class StockServiceImpl implements StockService{
@@ -18,8 +19,8 @@ public class StockServiceImpl implements StockService{
 	@Autowired
 	private StockRepository stockRepository;
 	
-	@Autowired
-    private WalletRepository walletRepository;
+//	@Autowired
+//    private WalletRepository walletRepository;
 
 
 	@Override
@@ -28,22 +29,24 @@ public class StockServiceImpl implements StockService{
 	}
 
 	@Override
-	public Stock buyStock(String stockId, int quantity, double price, String userId) throws StockNotFoundException {
+	public Stock buyStock(String stockId, int quantity, double price, String email) throws StockNotFoundException {
         Stock stock = stockRepository.findById(stockId)
                 .orElseThrow(() -> new StockNotFoundException("Stock not found with id " + stockId));
         
         stock.setQuantity(stock.getQuantity() + quantity);
-        stockRepository.save(stock);
+       
+        return stockRepository.save(stock);
 
         // Update the wallet balance
-        Wallet wallet = walletRepository.findByUserId(userId);
-        double totalCost = quantity * price;
-        wallet.reduceMoney(totalCost);
-        walletRepository.save(wallet);
+//        Wallet wallet = walletRepository.findByUserId(userId);
+//        double totalCost = quantity * price;
+//        wallet.reduceMoney(totalCost);
+//        walletRepository.save(wallet);
 
-        return stock;
+        
 	}
-
+	
+	
 	@Override
 	public List<Stock> getAllStocks() {
 		return stockRepository.findAll();
@@ -100,6 +103,7 @@ public class StockServiceImpl implements StockService{
 //	    return stockRepository.save(stock);
 //	}
 	
+
 	
 //	public void sellStock(String company, int quantity, double price) {
 //        Optional<Stock> optionalStock = stockRepository.findByCompany(company);
@@ -124,6 +128,7 @@ public class StockServiceImpl implements StockService{
 	    Optional<Stock> optionalStock = stockRepository.findByCompany(company);
 	    System.out.println("Stock retrieved: {}"+optionalStock);
 
+
 	    if (optionalStock.isEmpty()) {
 	        throw new StockNotFoundException("Stock not found for company: " + company);
 	    }
@@ -133,6 +138,7 @@ public class StockServiceImpl implements StockService{
 	    if (quantity <= 0) {
 	        throw new StockNotFoundException("Quantity must be greater than 0");
 	    }
+
 
 	    int newQuantity = stock.getQuantity() - quantity; // Subtract the sold quantity from the existing quantity
 
@@ -148,6 +154,7 @@ public class StockServiceImpl implements StockService{
 	}
 
 
+
     public void deleteStock(String company) {
         Optional<Stock> optionalStock = stockRepository.findByCompany(company);
 
@@ -160,6 +167,18 @@ public class StockServiceImpl implements StockService{
 
 	
 	
+//	 @Override
+//	    public List<Stock> getStocksByUserId(String userId) {
+//	        // Retrieve stocks associated with the user
+//	        return stockRepository.findByUserId(userId);
+//	    }
+
+	 @Override
+	 public List<Stock> getStocksByEmail(String email) {
+		 List<Stock> stocks = stockRepository.findByEmail(email);
+	        System.out.println("Stocks found for email " + email + ": " + stocks);
+	        return stocks;
+	    }
 	
 	
 

@@ -13,6 +13,11 @@ public class StockRequest {
 	private String stockId;
     private int quantity;
     private double price;
+
+    private String email;
+
+
     private String userId;
 	
+
 }

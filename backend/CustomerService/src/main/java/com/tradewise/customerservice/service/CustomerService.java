@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tradewise.customerservice.model.Customer;
+import com.tradewise.customerservice.model.Stock;
 import com.tradewise.customerservice.repository.CustomerRepository;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,10 +28,10 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
-    // Get customer by name
-    public Optional<Customer> getCustomerByName(String name) {
-        return customerRepository.findByName(name);
-    }
+//    // Get customer by name
+//    public Optional<Customer> getCustomerByName(String name) {
+//        return customerRepository.findByName(name);
+//    }
 
     // Add or update customer
     public Customer saveCustomer(Customer customer) {
@@ -47,5 +49,17 @@ public class CustomerService {
             return false;  // Customer not found
         }
     }
+    
+   
+   
+    public Optional<Customer> getCustomerByName(String name) {
+        return customerRepository.findByName(name);
+    }
+
+    
+    public Optional<Customer> getCustomerByEmail(String email) {
+        return customerRepository.findByEmail(email);
+    }
+
 }
 

@@ -9,9 +9,6 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent {
   title = 'userdashboard';
 
-
-
-
   showHeader = false;
 
     constructor(private router: Router) {}

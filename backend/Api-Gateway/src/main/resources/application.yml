@@ -62,7 +62,7 @@ spring:
             - Path=/api/admin/**  # Route requests starting with /api/stocks/ to stock-service
             
         - id: auth-service
-          uri: lb://AUTHSERVICE
+          uri: lb://AUTH-SERVICE
           predicates:
             - Path=/api/auth/**
       discovery:

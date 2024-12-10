@@ -17,13 +17,16 @@ public class Stock {
 	@Id
     private String stockId;
 	
-	@JsonProperty("companyName")
+	@JsonProperty("company")
     private String company;
 	
-	@JsonProperty("stockSymbol")
+	@JsonProperty("symbol")
     private String symbol;
     private double currentPrice;
     private double initialPrice;
     private int quantity;
+    
+    private String email;
 
 }
+

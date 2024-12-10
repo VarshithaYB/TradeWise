@@ -5,9 +5,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.tradewise.customerservice.client.StockClient;
 import com.tradewise.customerservice.exceptionhandler.BadRequestException;
 import com.tradewise.customerservice.exceptionhandler.CustomerNotFoundException;
 import com.tradewise.customerservice.model.Customer;
+import com.tradewise.customerservice.model.Stock;
 import com.tradewise.customerservice.service.CustomerService;
 
 
@@ -20,6 +22,9 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
+    
+    @Autowired
+    private StockClient stockClient;
 
     // Get all customers
     @GetMapping
@@ -36,13 +41,7 @@ public class CustomerController {
                        .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
     }
 
-    // Get customer by name
-    @GetMapping("/name/{name}")
-    public ResponseEntity<Customer> getCustomerByName(@PathVariable String name) {
-        Optional<Customer> customer = customerService.getCustomerByName(name);
-        return customer.map(ResponseEntity::ok)
-                       .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
-    }
+
 
     // Create or update customer
     @PostMapping
@@ -65,6 +64,31 @@ public class CustomerController {
         }
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+    
+
+
+
+    
+//    @GetMapping("/stocks/by-email")
+//    public ResponseEntity<List<Stock>> getStocksByEmail(@RequestParam String email) {
+//        // Validate customer existence by email
+//        Optional<Customer> customer = customerService.getCustomerByEmail(email);
+//        if (customer.isEmpty()) {
+//            throw new CustomerNotFoundException("Customer not found with email: " + email);
+//        }
+//
+//        // Call Stock Service to get stocks by email
+//        List<Stock> stocks = stockClient.getStocksByEmail(email);
+//        return new ResponseEntity<>(stocks, HttpStatus.OK);
+//    }
+
+
+    @GetMapping("/{email}/stocks")
+    public ResponseEntity<List<Stock>> getCustomerStocks(@PathVariable String email) {
+        List<Stock> stocks = stockClient.getStocksByEmail(email);
+        return ResponseEntity.ok(stocks);
+    }
+
 
 
 }

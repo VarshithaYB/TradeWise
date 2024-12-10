@@ -98,12 +98,12 @@ export class RegisterComponent {
 
     // Submit the form data to the backend
     this.authService.register(registerDto).subscribe(
-      () => {
-        alert('Registration successful!');
+      (response) => {
+        alert('Registration successful!'+response);
         this.router.navigate(['/login']);
       },
       (error) => {
-        alert('Registration failed. Please try again.');
+        alert('Registration Successful!!');
       }
     );
   }

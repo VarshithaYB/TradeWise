@@ -12,6 +12,6 @@ public class StockRequest {
 	private String stockId;
     private int quantity;
     private double price;
-    private String userId;
+    private String email;
 
 }

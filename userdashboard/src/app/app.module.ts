@@ -18,6 +18,8 @@ import { QuizComponent } from './quiz/quiz.component';
 import { ResultComponent } from './result/result.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { UsersComponent } from './users/users.component';
+import { AdminstocksComponent } from './adminstocks/adminstocks.component';
+import { AdminheaderComponent } from './adminheader/adminheader.component';
 //import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -38,6 +40,8 @@ import { UsersComponent } from './users/users.component';
     ResultComponent,
     AdmindashboardComponent,
     UsersComponent,
+    AdminstocksComponent,
+    AdminheaderComponent,
     //ReactiveFormsModule
 
   ],

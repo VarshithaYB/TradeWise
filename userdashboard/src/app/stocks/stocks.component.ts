@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { StockService } from '../stock.service'; 
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { AdminService } from '../admin.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { AuthService } from '../auth.service';
   templateUrl: './stocks.component.html',
   styleUrls: ['./stocks.component.css']
 })
-export class StocksComponent {
+export class StocksComponent implements OnInit{
 
   stocks = [
     { company: 'Apple', symbol: 'AAPL', currentPrice: 150, initialPrice: 120, logo: '/assets/apple.jpg'},
@@ -21,10 +22,15 @@ export class StocksComponent {
     { company: 'Microsoft', symbol: 'MSFT', currentPrice: 290, initialPrice: 250, logo: '/assets/microsoft.jpg' },
     { company: 'Facebook', symbol: 'FB', currentPrice: 360, initialPrice: 320, logo: '/assets/facebook.jpg' }
   ];
-  
-  constructor(private router: Router, private stockService: StockService, private authService: AuthService) {}
 
-  ngOnInit(): void {}
+  constructor(private router: Router, private stockService: StockService, private authService: AuthService,private adminService:AdminService) {}
+
+  ngOnInit(): void {
+    this.adminService.stocks$.subscribe((newStocks) => {
+      // Add new stocks to the existing stocks array
+      this.stocks = [...this.stocks, ...newStocks];
+    });
+  }
 
   // addStock(stock: any): void {
   //   this.router.navigate(['/add-stock'], { state: { stock } });

@@ -1,0 +1,55 @@
+/* Apply a full-page background image */
+body {
+    background-image: url('/assets/wallpaper.jpg'); /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    color: white; /* Ensures text is readable on darker backgrounds */
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the navbar */
+  }
+  
+  .nav-link {
+    color: #ffffff !important; /* White text for links */
+  }
+  
+  .nav-link.active {
+    font-weight: bold; /* Highlight active link */
+    text-decoration: underline; /* Optional: underline active link */
+  }
+  
+  /* Main container styles */
+  .container.text-center {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  /* Custom heading styles */
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  

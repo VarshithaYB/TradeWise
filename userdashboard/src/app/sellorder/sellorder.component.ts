@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StockService,StockRequest } from '../stock.service';
+import { AdminService } from '../admin.service';
 @Component({
   selector: 'app-sellorder',
   templateUrl: './sellorder.component.html',
@@ -19,15 +20,18 @@ export class SellorderComponent implements OnInit{
     currentPrice: 0
   };
 
+  userStocks: any[] = [];
+
   constructor(
     private route: ActivatedRoute,
     private stockService: StockService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
     // Get the companyName from route parameters
     this.company = this.route.snapshot.paramMap.get('company') || '';
+
   }
 
   // onSubmit(): void {

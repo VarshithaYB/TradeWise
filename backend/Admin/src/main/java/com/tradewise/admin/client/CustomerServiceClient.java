@@ -13,4 +13,7 @@ public interface CustomerServiceClient {
 
     @GetMapping("/api/customers")
     List<CustomerWithStocksDTO> getAllCustomers();
+    
+    @GetMapping("/api/customerstock")
+    List<CustomerWithStocksDTO> getAllCustomerWithStocks();
 }

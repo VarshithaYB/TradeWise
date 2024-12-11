@@ -13,10 +13,10 @@ export const QUESTIONS = [
       id: 2,
       question: "What is your annual income range?",
       options: [
-        { text: "Above $100,000", score: 10 },
-        { text: "$50,000 - $100,000", score: 7 },
-        { text: "$20,000 - $50,000", score: 5 },
-        { text: "Below $20,000", score: 3 }
+        { text: "Above ₹100,000", score: 10 },
+        { text: "₹50,000 - ₹100,000", score: 7 },
+        { text: "₹20,000 - ₹50,000", score: 5 },
+        { text: "Below ₹20,000", score: 3 }
       ]
     },
     {
@@ -39,26 +39,26 @@ export const QUESTIONS = [
         { text: "Preserve capital", score: 3 }
       ]
     },
-    {
-      id: 5,
-      question: "What is your current financial stability level?",
-      options: [
-        { text: "Very stable (no debts, strong savings)", score: 10 },
-        { text: "Stable (manageable debts, some savings)", score: 7 },
-        { text: "Moderate (few savings, some debts)", score: 5 },
-        { text: "Unstable (high debts, no savings)", score: 3 }
-      ]
-    },
-    {
-      id: 6,
-      question: "How comfortable are you with investing in stocks?",
-      options: [
-        { text: "Very comfortable", score: 10 },
-        { text: "Somewhat comfortable", score: 7 },
-        { text: "Neutral", score: 5 },
-        { text: "Uncomfortable", score: 3 }
-      ]
-    },
+    // {
+    //   id: 5,
+    //   question: "What is your current financial stability level?",
+    //   options: [
+    //     { text: "Very stable (no debts, strong savings)", score: 10 },
+    //     { text: "Stable (manageable debts, some savings)", score: 7 },
+    //     { text: "Moderate (few savings, some debts)", score: 5 },
+    //     { text: "Unstable (high debts, no savings)", score: 3 }
+    //   ]
+    // },
+    // {
+    //   id: 6,
+    //   question: "How comfortable are you with investing in stocks?",
+    //   options: [
+    //     { text: "Very comfortable", score: 10 },
+    //     { text: "Somewhat comfortable", score: 7 },
+    //     { text: "Neutral", score: 5 },
+    //     { text: "Uncomfortable", score: 3 }
+    //   ]
+    // },
     {
       id: 7,
       question: "What is your preferred investment duration?",
@@ -79,16 +79,16 @@ export const QUESTIONS = [
         { text: "Panic and sell all stocks", score: 3 }
       ]
     },
-    {
-      id: 9,
-      question: "How diversified is your current investment portfolio?",
-      options: [
-        { text: "Highly diversified (stocks, bonds, real estate, etc.)", score: 10 },
-        { text: "Moderately diversified (stocks and bonds)", score: 7 },
-        { text: "Somewhat diversified (mostly stocks)", score: 5 },
-        { text: "Not diversified (all in stocks)", score: 3 }
-      ]
-    },
+    // {
+    //   id: 9,
+    //   question: "How diversified is your current investment portfolio?",
+    //   options: [
+    //     { text: "Highly diversified (stocks, bonds, real estate, etc.)", score: 10 },
+    //     { text: "Moderately diversified (stocks and bonds)", score: 7 },
+    //     { text: "Somewhat diversified (mostly stocks)", score: 5 },
+    //     { text: "Not diversified (all in stocks)", score: 3 }
+    //   ]
+    // },
     {
       id: 10,
       question: "What is your knowledge level about the stock market?",
@@ -99,16 +99,16 @@ export const QUESTIONS = [
         { text: "None", score: 3 }
       ]
     },
-    {
-      id: 11,
-      question: "How much emergency savings do you have?",
-      options: [
-        { text: "More than 12 months of expenses", score: 10 },
-        { text: "6-12 months of expenses", score: 7 },
-        { text: "3-6 months of expenses", score: 5 },
-        { text: "Less than 3 months of expenses", score: 3 }
-      ]
-    },
+    // {
+    //   id: 11,
+    //   question: "How much emergency savings do you have?",
+    //   options: [
+    //     { text: "More than 12 months of expenses", score: 10 },
+    //     { text: "6-12 months of expenses", score: 7 },
+    //     { text: "3-6 months of expenses", score: 5 },
+    //     { text: "Less than 3 months of expenses", score: 3 }
+    //   ]
+    // },
     {
       id: 12,
       question: "What is your tolerance for market volatility?",

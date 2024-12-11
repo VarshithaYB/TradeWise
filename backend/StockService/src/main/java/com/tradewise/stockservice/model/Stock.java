@@ -16,12 +16,8 @@ public class Stock {
 	
 	@Id
     private String stockId;
-	
-
 	@JsonProperty("company")
     private String company;
-	
-
 	@JsonProperty("symbol")
     private String symbol;
     private double currentPrice;

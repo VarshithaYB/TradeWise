@@ -12,12 +12,12 @@ import { AdminService } from '../admin.service';
 export class AdminstocksComponent {
 
   stocks = [
-    { company: 'Walmart', symbol: 'WAL-MART', currentPrice: 150, initialPrice: 120, logo: '/assets/apple.jpg'},
-    { company: 'IBM', symbol: 'IBM', currentPrice: 800, initialPrice: 700, logo: '/assets/tesla.jpg' },
-    { company: 'Oracle', symbol: 'ORCL', currentPrice: 3400, initialPrice: 3000, logo: '/assets/amazon.jpg' },
-    { company: 'Cisco', symbol: 'CISCO', currentPrice: 2800, initialPrice: 2500, logo: '/assets/google.jpg' },
-    { company: 'Alphabet', symbol: 'ALPHABET', currentPrice: 290, initialPrice: 250, logo: '/assets/microsoft.jpg' },
-    { company: 'HCLTech', symbol: 'HCL', currentPrice: 360, initialPrice: 320, logo: '/assets/facebook.jpg' }
+    { company: 'Walmart', symbol: 'WAL-MART', currentPrice: 150, initialPrice: 120, logo: '/assets/walmart.jpg'},
+    { company: 'IBM', symbol: 'IBM', currentPrice: 800, initialPrice: 700, logo: '/assets/ibm.jpeg' },
+    { company: 'Oracle', symbol: 'ORCL', currentPrice: 3400, initialPrice: 3000, logo: '/assets/oracle.jpg' },
+    { company: 'Cisco', symbol: 'CISCO', currentPrice: 2800, initialPrice: 2500, logo: '/assets/cisco.jpg' },
+    { company: 'Alphabet', symbol: 'ALPHABET', currentPrice: 290, initialPrice: 250, logo: '/assets/alpabet.jpg' },
+    { company: 'HCLTech', symbol: 'HCL', currentPrice: 360, initialPrice: 320, logo: '/assets/hcl.jpg' }
   ];
   
   constructor(private AdminService: AdminService) {}

@@ -1,1 +1,174 @@
-<p>users works!</p>
+<!-- <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Company Name</th>
+        <th scope="col">Initial Price</th>
+        <th scope="col">Current Price</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.email }}</td>
+        <td>{{ user.company }}</td>
+        <td>{{ user.initialPrice }}</td>
+        <td>{{ user.currentPrice }}</td>
+        <td>{{ user.quantity }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <!-- <div class="container">
+    <h2>Users Table</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Company Name</th>
+          <th>Initial Price</th>
+          <th>Current Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.email }}</td>
+          <td>{{ user.companyName }}</td>
+          <td>{{ user.initialPrice }}</td>
+          <td>{{ user.currentPrice }}</td>
+          <td>{{ user.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Stock</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" routerLink="/">
+            <img src="/assets/tradewise.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+            TradeWise
+          </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <!-- Home Link -->
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/admindashboard" routerLinkActive="active" aria-current="page">Home</a>
+              </li>
+              <!-- Stocks Link -->
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/stocks" routerLinkActive="active">Stocks</a>
+              </li>
+              <!-- My Stocks Link -->
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+              </li>
+              <!-- Sale Order Link -->
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/add-stock" routerLinkActive="active">Add Stock</a>
+              </li>
+              <!-- Logout Link -->
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/logout" routerLinkActive="active">Logout</a>
+              </li>
+            </ul>
+          </div>
+    
+    
+        </div>
+      </nav>
+  <div class="container mt-5">
+    <h2 class="text-center">Customer Stock</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Email</th>
+          <th scope="col">Company Name</th>
+          <th scope="col">Initial Price</th>
+          <th scope="col">Current Price</th>
+          <th scope="col">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Row 1 -->
+        <tr>
+          <td>suchithra@gmail.com</td>
+          <td>Apple</td>
+          <td>120.0</td>
+          <td>150.0</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>suchithra@gmail.com</td>
+          <td>Google</td>
+          <td>2500.0</td>
+          <td>2800.0</td>
+          <td>5</td>
+        </tr>
+        <!-- Row 2 -->
+        <tr>
+          <td>varshitha@gmail.com</td>
+          <td>Tesla</td>
+          <td>700.0</td>
+          <td>800.0</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>varshitha@gmail.com</td>
+          <td>Facebook</td>
+          <td>320.0</td>
+          <td>360.0</td>
+          <td>5</td>
+        </tr>
+        <!-- Row 3 -->
+        <tr>
+          <td>bindu@gmail.com</td>
+          <td>Amazon</td>
+          <td>3000.0</td>
+          <td>3400.0</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>bindu@gmail.com</td>
+          <td>Microsoft</td>
+          <td>250.0</td>
+          <td>290.0</td>
+          <td>20</td>
+        </tr>
+        <!-- Row 4 -->
+        <tr>
+          <td>yashu@gmail.com</td>
+          <td>Google</td>
+          <td>2500.0</td>
+          <td>2800.0</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>yashu@gmail.com</td>
+          <td>Amazon</td>
+          <td>3000.0</td>
+          <td>3400.0</td>
+          <td>3</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

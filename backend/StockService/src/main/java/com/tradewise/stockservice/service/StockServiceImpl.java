@@ -173,7 +173,7 @@ public class StockServiceImpl implements StockService{
 //	        return stockRepository.findByUserId(userId);
 //	    }
 
-	 @Override
+	 
 	 public List<Stock> getStocksByEmail(String email) {
 		 List<Stock> stocks = stockRepository.findByEmail(email);
 	        System.out.println("Stocks found for email " + email + ": " + stocks);

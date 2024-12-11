@@ -12,6 +12,7 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { ResultComponent } from './result/result.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'result', component: ResultComponent },
   { path: '', redirectTo: '/quiz', pathMatch: 'full' },
   { path: '', redirectTo: '/stocks', pathMatch: 'full' },
-  { path: 'admin', component: AdmindashboardComponent}
+  { path: 'admin', component: AdmindashboardComponent},
+  { path: 'users', component: UsersComponent}
 ];
 
 @NgModule({

@@ -1,34 +1,4 @@
-<!-- <div class="container">
-  <h2>Available Stocks</h2>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Logo</th>
-        <th>Company</th>
-        <th>Symbol</th>
-        <th>Current Price</th>
-        <th>Initial Price</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let stock of stocks">
-        
-        <td>
-          <img *ngIf="stock.logo" [src]="stock.logo" alt="{{stock.company}}" width="50">
-          <span *ngIf="!stock.logo">No Logo</span>
-        </td>
-        <td>{{ stock.company }}</td>
-        <td>{{ stock.symbol }}</td>
-        <td>{{ stock.currentPrice | currency }}</td>
-        <td>{{ stock.initialPrice | currency }}</td>
-        <td>
-          <button class="btn btn-primary" (click)="addStock(stock)">Add to Stocks</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { RegisterDto } from './register-dto.model';
 
@@ -16,6 +16,9 @@ interface LoginResponse {
 export class AuthService {
 
   private apiUrl = 'http://localhost:8085/api/auth'; // Replace with your backend API URL
+
+
+  private _isLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) {}
 
@@ -73,5 +76,15 @@ export class AuthService {
     );
 
 
+}
+
+
+get isLoggedIn$() {
+  return this._isLoggedIn.asObservable();
+}
+
+// Method to set login status
+setLoginStatus(status: boolean) {
+  this._isLoggedIn.next(status);
 }
 }

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { StockService } from '../stock.service'; 
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { AdminService } from '../admin.service';
+
 
 
 @Component({
@@ -23,13 +23,13 @@ export class StocksComponent implements OnInit{
     { company: 'Facebook', symbol: 'FB', currentPrice: 360, initialPrice: 320, logo: '/assets/facebook.jpg' }
   ];
 
-  constructor(private router: Router, private stockService: StockService, private authService: AuthService,private adminService:AdminService) {}
+  constructor(private router: Router, private stockService: StockService, private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.adminService.stocks$.subscribe((newStocks) => {
-      // Add new stocks to the existing stocks array
-      this.stocks = [...this.stocks, ...newStocks];
-    });
+    // this.adminService.stocks$.subscribe((newStocks) => {
+    //   // Add new stocks to the existing stocks array
+    //   this.stocks = [...this.stocks, ...newStocks];
+    // });
   }
 
   // addStock(stock: any): void {
